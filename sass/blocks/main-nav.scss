@@ -1,0 +1,95 @@
+@use "../global/forwarded.scss" as f;
+
+
+
+.main-nav__toggle {
+  position: absolute;
+  right: 0;
+  top: 0;
+
+  display: block;
+
+  width: 60px;
+  height: 60px;
+
+  cursor: pointer;
+
+  border: none;
+  background-color: transparent;
+
+  &:active {
+    background-color: #f0ebff;
+  }
+
+  @media (min-width: f.$tablet-width) {
+    display: none;
+  }
+}
+
+.main-nav--closed .main-nav__toggle::before {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  width: 16px;
+  height: 1px;
+
+  content: "";
+  transform: translate(-50%, -50%);
+
+  background-color: #ffffff;
+  box-shadow: 0 6px 0 0 #ffffff, 0 -6px 0 0 #ffffff;
+}
+
+.main-nav--opened .main-nav__toggle {
+  &::before,
+  &::after {
+    position: absolute;
+    top: 30px;
+    left: 22px;
+
+    width: 16px;
+    height: 1px;
+
+    content: "";
+
+    background-color: #ffffff;
+  }
+
+  &::before {
+    transform: rotate(45deg);
+
+    box-shadow: none;
+  }
+
+  &::after {
+    transform: rotate(-45deg);
+  }
+}
+
+@media (max-width: f.$mobile-width-only) {
+
+  .main-nav--closed {
+    & .main-nav__wrapper {
+      display: none;
+    }
+  }
+
+  .main-nav--opened .main-nav__wrapper {
+    position: absolute;
+
+    z-index: 100;
+    top: 59px;
+    right: 0;
+    display: block;
+  }
+}
+
+@media (min-width: f.$tablet-width) {
+  .main-nav__wrapper {
+    position: static;
+  }
+}
+
+
+

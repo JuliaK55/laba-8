@@ -1,0 +1,53 @@
+@use "../global/forwarded.scss" as f;
+
+.paper {
+  min-width: 200px;
+}
+
+.paper__title {
+  font-weight: 500;
+
+  margin: 0 0 16px;
+
+  font-size: 26px;
+  line-height: 30px;
+}
+
+.paper__text {
+  font-size: 16px;
+  line-height: 20px;
+  text-align: justify;
+  margin: 0 0 16px;
+}
+
+.paper__button {
+  @include f.link-reset;
+
+  display: inline-block;
+
+  padding: 8px 16px;
+  margin: 0;
+
+  font-size: 16px;
+  line-height: 20px;
+
+  background-color: #ffffff;
+
+  border: 1px solid #000000;
+  border-radius: 6px;
+
+  outline: none;
+
+  cursor: pointer;
+
+  &:hover,
+  &:focus-visible {
+    border-color: #4289c8;
+    transform: scale(1.05);
+    transition: 200ms;
+  }
+
+  &:active {
+    opacity: 0.5;
+  }
+}

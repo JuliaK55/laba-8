@@ -1,0 +1,35 @@
+@use "../global/variables.scss" as f;
+
+
+.header {
+  background-color: #222223;
+}
+
+.header__wrapper {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+
+  width: 100%;
+  max-width: f.$desktop-width;
+  margin: 0 auto;
+  min-height: 60px;
+  padding: 5px 20px;
+
+  box-sizing: border-box;
+
+  font-size: 16px;
+  line-height: 16px;
+  color: #ffffff;
+}
+
+@media (min-width: f.$tablet-width) {
+  .header__wrapper {
+    justify-content: space-between;
+    padding: 10px 40px;
+  }
+
+}
+
+

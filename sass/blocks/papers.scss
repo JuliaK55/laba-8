@@ -1,0 +1,35 @@
+@use "../global/forwarded.scss" as f;
+
+.papers {
+  width: 100%;
+}
+
+.papers__wrapper {
+  @include f.list-reset;
+
+  padding: 40px 20px;
+  margin: 0 auto;
+  max-width: f.$desktop-width;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+
+}
+
+.papers__item {
+  padding: 0;
+}
+
+
+@media (min-width: f.$tablet-width) {
+  .papers__wrapper {
+    padding: 60px 40px;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: f.$desktop-width) {
+  .papers__wrapper {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

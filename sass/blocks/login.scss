@@ -1,0 +1,71 @@
+@use "../global/forwarded.scss" as f;
+
+
+.login {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  border-top: 1px solid #f0ebff;
+  background-color: #fff;
+}
+
+.login__input {
+  width: 100%;
+  text-align: center;
+  padding: 8px 16px;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid #56b85a;
+
+  &:hover,
+  &:focus {
+    opacity: 0.7;
+  }
+
+  &:active {
+    opacity: 0.5;
+  }
+}
+
+.login__button {
+  width: 100%;
+  text-align: center;
+  padding: 8px 16px;
+  background-color: #56b85a;
+  color: #ffffff;
+  outline: none;
+  border: none;
+
+  &:hover,
+  &:focus-visible {
+    opacity: 0.7;
+  }
+
+  &:active {
+    opacity: 0.5;
+  }
+}
+
+@media (min-width: f.$tablet-width) {
+  .login {
+    width: auto;
+    flex-direction: row;
+    background-color: transparent;
+    border: none;
+    gap: 8px;
+  }
+
+  .login__input {
+    display: block;
+    border: none;
+    border-radius: 6px;
+  }
+
+  .login__button {
+    width: 80px;
+    border: none;
+    border-radius: 6px;
+  }
+
+}
+
